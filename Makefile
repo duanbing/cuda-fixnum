@@ -1,13 +1,13 @@
 CXX ?= g++
-GENCODES ?= 50
+GENCODES ?= 75
 
-INCLUDE_DIRS = -I./src
+INCLUDE_DIRS = -I./src -I/home/duanbing/local/include
 NVCC_FLAGS = -ccbin $(CXX) -std=c++11 -Xcompiler -Wall,-Wextra
 NVCC_OPT_FLAGS = -DNDEBUG
 NVCC_TEST_FLAGS = -lineinfo
 NVCC_DBG_FLAGS = -g -G
 NVCC_LIBS = -lstdc++
-NVCC_TEST_LIBS = -lgtest
+NVCC_TEST_LIBS = -lgtest -L/home/duanbing/local/lib
 
 all:
 	@echo "Please run 'make check' or 'make bench'."
